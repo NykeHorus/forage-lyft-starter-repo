@@ -1,9 +1,9 @@
 import unittest
 from datetime import date
 
-from battery.nubbinBattery import NubbenBattery
+from battery.nubbenBattery import NubbenBattery
 
-class TestNubbinBattery(unittest.TestCase):
+class TestNubbenBattery(unittest.TestCase):
     def test_init_with_dates(self):
         last_service_date = "2020-01-01"
         current_date = "2022-01-01"
