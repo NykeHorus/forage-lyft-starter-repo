@@ -1,5 +1,5 @@
 import unittest
-from datetime import datetime
+from datetime import date
 
 from battery.nubbinBattery import NubbenBattery
 
@@ -13,15 +13,15 @@ class TestNubbinBattery(unittest.TestCase):
         self.assertEqual(battery.current_date, current_date)
 
     def test_needs_service_false(self):
-        last_service_date = "2020-01-01"
-        current_date = "2022-01-01"
+        last_service_date = date.fromisoformat("2020-01-01")
+        current_date = date.fromisoformat("2022-01-01")
         battery = NubbenBattery(last_service_date, current_date)
     
         self.assertFalse(battery.needs_service())
 
     def test_needs_service_true(self):
-        last_service_date = "2016-01-01"
-        current_date = "2022-01-01"
+        last_service_date = date.fromisoformat("2016-01-01")
+        current_date = date.fromisoformat("2022-01-01")
         battery = NubbenBattery(last_service_date, current_date)
     
         self.assertTrue(battery.needs_service())
